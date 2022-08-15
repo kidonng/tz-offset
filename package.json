@@ -1,7 +1,7 @@
 {
 	"name": "@kidonng/tz-offset",
 	"version": "1.0.0",
-	"description": "Get offset by time zone name",
+	"description": "Get and set offset by time zone name",
 	"scripts": {
 		"build": "tsc",
 		"lint": "xo",

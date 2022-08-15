@@ -1,6 +1,6 @@
 # tz-offset
 
-> Get offset by time zone name
+> Get and set offset by time zone name
 
 ## Install
 
@@ -11,13 +11,17 @@ npm install @kidonng/tz-offset
 ## Usage
 
 ```js
-import tzOffset from '@kidonng/tz-offset'
+import tzOffset, {withTz} from '@kidonng/tz-offset'
 
 tzOffset('Asia/Shanghai') // => 480
 tzOffset('UTC') // => 0
+
+withTz(Date.UTC(2000, 0), 'Asia/Shanghai') // => 2000-01-01T08:00:00.000Z
 ```
 
 ## API
+
+### `tzOffset`
 
 ```ts
 declare const tzOffset: (timeZone: string) => number
@@ -27,18 +31,16 @@ Returns number of minutes between the given time zone add UTC.
 
 The value is positive if the given time zone is ahead of UTC, and negative if the given time zone is behind UTC. This is contrary to [`Date#getTimezoneOffset()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset#negative_values_and_positive_values).
 
-## Recipes
-
-### Convert date to a timezone
+### `withTz`
 
 <!-- prettier-ignore -->
-```js
-date.setMinutes(
-	date.getMinutes() +
-	date.getTimezoneOffset() + // To UTC
-	tzOffset(timezone)
-)
+```ts
+declare const withTz: (date: number | string | Date, timeZone: string) => Date
 ```
+
+Converts the given date to specified timezone.
+
+## Recipes
 
 ### Specify a UTC offset
 

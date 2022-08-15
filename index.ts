@@ -24,4 +24,12 @@ const tzOffset = (timeZone: string) => {
 	return (utc - now.getTime()) / 6e4
 }
 
+export const withTz = (date: number | string | Date, timeZone: string) => {
+	date = new Date(date)
+	date.setMinutes(
+		date.getMinutes() + date.getTimezoneOffset() + tzOffset(timeZone),
+	)
+	return date
+}
+
 export default tzOffset
