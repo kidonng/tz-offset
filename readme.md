@@ -42,6 +42,8 @@ Converts the given date to specified timezone.
 
 ## Recipes
 
+This module pairs nicely with [`date-fns`](https://github.com/date-fns/date-fns).
+
 ### Specify a UTC offset
 
 ```js
@@ -60,3 +62,7 @@ This modules uses `Intl.DateTimeFormat`'s [`hourCycle`](https://developer.mozill
 - Safari 13
 - Node.js 12
 - Deno 1.8
+
+## Credits
+
+This module is a simplifed version of [`date-fns-tz`](https://github.com/marnusw/date-fns-tz)'s [`tzTokenizeDate`](https://github.com/marnusw/date-fns-tz/blob/0577249fb6c47ad7b6a84826e90d976dac9ab52e/src/_lib/tzTokenizeDate/index.js#L79-L88) and [`tzParseTimezone`](https://github.com/marnusw/date-fns-tz/blob/0577249fb6c47ad7b6a84826e90d976dac9ab52e/src/_lib/tzParseTimezone/index.js#L88-L97) internals.
