@@ -27,9 +27,9 @@ withTz(Date.UTC(2000, 0), 'Asia/Shanghai') // => 2000-01-01T08:00:00.000Z
 declare const tzOffset: (timeZone: string) => number
 ```
 
-Returns number of minutes between the given time zone add UTC.
+Returns number of minutes between the given time zone and UTC.
 
-The value is positive if the given time zone is ahead of UTC, and negative if the given time zone is behind UTC. This is contrary to [`Date#getTimezoneOffset()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset#negative_values_and_positive_values).
+The value is positive if the given time zone is ahead of UTC, and negative if the given time zone is behind UTC. This is **contrary** to [`Date#getTimezoneOffset()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset#negative_values_and_positive_values), which compares _local_ time zone to UTC.
 
 ### `withTz`
 
