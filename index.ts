@@ -1,4 +1,4 @@
-const tzOffset = (timeZone: string) => {
+export const tzOffset = (timeZone: string) => {
 	const now = new Date()
 	const parts = new Intl.DateTimeFormat('en-US', {
 		timeZone,
@@ -31,5 +31,3 @@ export const withTz = (date: number | string | Date, timeZone: string) => {
 	)
 	return date
 }
-
-export default tzOffset

@@ -11,7 +11,7 @@ npm install @kidonng/tz-offset
 ## Usage
 
 ```js
-import tzOffset, {withTz} from '@kidonng/tz-offset'
+import {tzOffset, withTz} from '@kidonng/tz-offset'
 
 tzOffset('Asia/Shanghai') // => 480
 tzOffset('UTC') // => 0
