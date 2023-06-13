@@ -1,6 +1,6 @@
 {
 	"name": "@kidonng/tz-offset",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Get and set offset by time zone name",
 	"scripts": {
 		"prepack": "tsc",
