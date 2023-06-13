@@ -1,5 +1,5 @@
 import {test, expect} from 'vitest'
-import tzOffset, {withTz} from './index.js'
+import {tzOffset, withTz} from './index.js'
 
 test('tzOffset', () => {
 	expect(tzOffset('Asia/Shanghai')).toEqual(480)
