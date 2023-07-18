@@ -35,7 +35,7 @@ The value is positive if the given time zone is ahead of UTC, and negative if th
 
 <!-- prettier-ignore -->
 ```ts
-declare const withTz: (date: number | string | Date, timeZone: string) => Date
+declare const withTz: (timeZone: string, date: number | string | Date) => Date
 ```
 
 Converts the given date to specified timezone.

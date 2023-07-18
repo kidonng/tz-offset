@@ -8,7 +8,7 @@ test('tzOffset', () => {
 
 test('withTz', () => {
 	const utc = Date.UTC(2000, 0)
-	expect(withTz(utc, 'Asia/Shanghai').getTime()).toEqual(
+	expect(withTz('Asia/Shanghai', utc).getTime()).toEqual(
 		new Date(utc).setHours(8),
 	)
 })
