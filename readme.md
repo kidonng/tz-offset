@@ -54,14 +54,9 @@ Note [the sign is intentionally inverted](https://en.wikipedia.org/wiki/Tz_datab
 
 ## Compatibility
 
-This modules uses `Intl.DateTimeFormat`'s [`hourCycle`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#hourcycle), which is supported since:
+This module uses the following features:
 
-- Chrome 73
-- Edge 18
-- Firefox 58
-- Safari 13
-- Node.js 12
-- Deno 1.8
+- `Intl.DateTimeFormat`'s `hourCycle` option ([MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#hourcycle), [Can I use](https://caniuse.com/mdn-javascript_builtins_intl_datetimeformat_datetimeformat_options_parameter_options_hourcycle_parameter))
 
 ## Credits
 
