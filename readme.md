@@ -16,7 +16,7 @@ import {tzOffset, withTz} from '@kidonng/tz-offset'
 tzOffset('Asia/Shanghai') // => 480
 tzOffset('UTC') // => 0
 
-withTz(Date.UTC(2000, 0), 'Asia/Shanghai') // => 2000-01-01T08:00:00.000Z
+withTz('Asia/Shanghai', Date.UTC(2000, 0)) // => 2000-01-01T08:00:00.000Z
 ```
 
 ## API
