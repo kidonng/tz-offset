@@ -25,7 +25,7 @@ export const tzOffset = (timeZone: string) => {
 	].map(type => Number(parts.find(part => part.type === type)!.value))
 	const utc = Date.UTC(year!, month! - 1, ...rest, now.getMilliseconds())
 
-	return (utc - now.getTime()) / 6e4
+	return (utc - now.getTime()) / 60_000
 }
 
 export const withTz = (timeZone: string, date: number | string | Date) => {
