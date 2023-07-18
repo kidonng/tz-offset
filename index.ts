@@ -11,14 +11,18 @@ export const tzOffset = (timeZone: string) => {
 		second: '2-digit',
 	}).formatToParts(now)
 
-	const [year, month, ...rest] = [
+	const [
+		year,
+		month,
+		...rest
+	] = [
 		'year',
 		'month',
 		'day',
 		'hour',
 		'minute',
 		'second',
-	].map((type) => Number(parts.find((part) => part.type === type)!.value))
+	].map(type => Number(parts.find(part => part.type === type)!.value))
 	const utc = Date.UTC(year!, month! - 1, ...rest, now.getMilliseconds())
 
 	return (utc - now.getTime()) / 6e4
@@ -27,7 +31,10 @@ export const tzOffset = (timeZone: string) => {
 export const withTz = (timeZone: string, date: number | string | Date) => {
 	date = new Date(date)
 	date.setMinutes(
-		date.getMinutes() + date.getTimezoneOffset() + tzOffset(timeZone),
+		date.getMinutes()
+		+ date.getTimezoneOffset()
+		+ tzOffset(timeZone),
 	)
+
 	return date
 }
