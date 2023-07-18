@@ -2,6 +2,8 @@
 
 > Get and set offset by time zone name
 
+This module pairs nicely with [`date-fns`](https://github.com/date-fns/date-fns).
+
 ## Install
 
 ```sh
@@ -14,7 +16,7 @@ npm install @kidonng/tz-offset
 import {tzOffset, withTz} from '@kidonng/tz-offset'
 
 tzOffset('Asia/Shanghai') // => 480
-tzOffset('UTC') // => 0
+tzOffset('Etc/GMT+8') // => -480 (the sign is intentionally inverted, see https://en.wikipedia.org/wiki/Tz_database#Area)
 
 withTz('Asia/Shanghai', Date.UTC(2000, 0)) // => 2000-01-01T08:00:00.000Z
 ```
@@ -29,7 +31,9 @@ declare const tzOffset: (timeZone: string) => number
 
 Returns number of minutes between the given time zone and UTC.
 
-The value is positive if the given time zone is ahead of UTC, and negative if the given time zone is behind UTC. This is **contrary** to [`Date#getTimezoneOffset()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset#negative_values_and_positive_values), which compares _local_ time zone to UTC.
+The value is positive if the given time zone is ahead of UTC, and negative if the given time zone is behind UTC.
+
+> **Note**: This is **contrary** to [`Date#getTimezoneOffset()`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset#negative_values_and_positive_values), which compares _local_ time zone to UTC.
 
 ### `withTz`
 
@@ -39,18 +43,6 @@ declare const withTz: (timeZone: string, date: number | string | Date) => Date
 ```
 
 Converts the given date to specified timezone.
-
-## Recipes
-
-This module pairs nicely with [`date-fns`](https://github.com/date-fns/date-fns).
-
-### Specify a UTC offset
-
-```js
-tzOffset('Etc/GMT+8') // => -480
-```
-
-Note [the sign is intentionally inverted](https://en.wikipedia.org/wiki/Tz_database#Area).
 
 ## Compatibility
 
